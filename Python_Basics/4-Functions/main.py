@@ -18,7 +18,7 @@ print(increment(by=1, value=10))
 
 # [] = lists
 # () = tuple
-# {} = dict
+# {} = sets
 
 def multiply(*numbers):  # here the * makes it tuple
     total = 1
