@@ -1,6 +1,13 @@
 from array import array
 from collections import deque
 
+# List  = [] ordered and changeable. Duplicates OK
+# Set   = {} unordered and immutable, but Add/Remove OK. NO duplicates
+# Tuple = () ordered and unchangeable. Duplicates OK. FASTER
+# dictionary =  a collection of {key:value} pairs
+# ordered and changeable. No duplicates
+
+
 # lists
 from encodings import mac_arabic
 import enum
