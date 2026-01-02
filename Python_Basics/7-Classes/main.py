@@ -1,3 +1,5 @@
+from collections import namedtuple
+from abc import ABC, abstractmethod
 from operator import getitem
 from tkinter import S
 
@@ -138,3 +140,101 @@ print(issubclass(Animal, object))
 print(m.x)
 
 # AVOID MULTI LEVEL INHERITANCE, MAX 1-2 LEVEL
+# AVOID MULTIPLE INHERITANCE TOO
+
+
+class Emplyoee:
+    def greet(self):
+        print("I am emplyoee")
+
+
+class Person:
+    def greet(self):
+        print("I am a person")
+
+
+class Manager(Emplyoee, Person):
+    pass
+
+
+m1 = Manager()
+m1.greet()  # employee vala print hoga cause vo phele aaya
+
+###
+# An abstract class tells child classes:
+# “You must implement these methods, and you may reuse these common ones.”
+
+
+class Stream(ABC):
+    def __init__(self):
+        pass
+
+    @abstractmethod
+    def read(self):
+        pass
+
+    def open(self):
+        print("i iz print")
+
+
+class NetworkStream(Stream):
+    def read(self):
+        pass
+
+
+obj1 = NetworkStream()
+
+
+# extending built in types
+class Text(str):
+    def duplicate(self):
+        return self + self
+
+
+class TrackableList(list):
+    def append(self, object):
+        print("Append called")
+        super().append(object)
+
+
+list = TrackableList()
+list.append("1")
+
+
+# named tuples
+
+Point = namedtuple("Point", ["x", "y"])
+p1 = Point(x=1, y=2)
+p2 = Point(x=1, y=2)
+
+print(p1 == p2)
+
+
+# polymorphism
+
+
+class UIControl(ABC):
+    @abstractmethod
+    def draw(self):
+        pass
+
+
+class TextBox(UIControl):
+    def draw(self):
+        print("TextBox")
+
+
+class DropDownList(UIControl):
+    def draw(self):
+        print("DropDownList")
+
+
+def draw(controls):
+    for control in controls:
+        control.draw()
+
+
+ddl = DropDownList()
+textbox = TextBox()
+
+draw([ddl, textbox])
