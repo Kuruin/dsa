@@ -38,6 +38,49 @@ class Solution:
                 print(j, end=" ")
             print()
 
+    def pattern7(self, n):
+        for i in range(n):
+            for j in range(n-1, i, -1):
+                print(" ", end="")
+            print("*" * (2*i + 1), end=" ")
+            for j in range(n-1, i, -1):
+                print(" ", end="")
+            print()
+
+    def pattern8(self, n):
+        for i in range(n):
+            for j in range(i):
+                print(" ", end="")
+            print("*" * ((2*n) - (2*i+1)), end="")
+            for j in range(i):
+                print(" ", end="")
+            print()
+
+    def pattern9(self, n):
+        for i in range(n):
+            for j in range(n-1, i, -1):
+                print(" ", end="")
+            print("*" * (2*i + 1), end=" ")
+            for j in range(n-1, i, -1):
+                print(" ", end="")
+            print()
+        for i in range(n):
+            for j in range(i):
+                print(" ", end="")
+            print("*" * ((2*n) - (2*i+1)), end="")
+            for j in range(i):
+                print(" ", end="")
+            print()
+
+    def pattern10(self, n):
+        for i in range(n-1):
+            print("*" * (i + 1))
+
+        print("*" * n)
+
+        for i in range(n-1, 0, -1):
+            print("*" * i)
+
 
 sol = Solution()
-sol.pattern6(5)
+sol.pattern11(5)
