@@ -248,6 +248,28 @@ class Solution:
             space += 2
             print()
 
+        print()
+        for i in range(2*n-1):
+            stars = i+1
+            if (i > n):
+                stars = (2 * n) - i
+            # stars
+
+            for i in range(stars):
+                print("*", end=" ")
+            # spaces
+            # stars
+            print()
+
+    def pattern21(self, n):
+        for i in range(n):
+            for j in range(n):
+                if (i == 0 or j == 0 or i == n-1 or j == n-1):
+                    print("*", end=" ")
+                else:
+                    print(" ", end=" ")
+            print()
+
 
 sol = Solution()
-sol.pattern20(5)
+sol.pattern21(4)
