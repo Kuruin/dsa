@@ -86,11 +86,14 @@ class basicMaths:
 
     def gcd_hcf(self, n1, n2):
         gcd = 1
-        min = n1 if n1 < n2 else n2
-        for i in range(1, min + 1):
+        min = n1 if n1 < n2 else n2  # so it start from the top and goes down
+        for i in range(min, 0, -1):
             if n1 % i == 0 and n2 % i == 0:
                 gcd = i
+                break
         print(gcd)
+
+    # eucledian distance
 
 
 obj = basicMaths()
