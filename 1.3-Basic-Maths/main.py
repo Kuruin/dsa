@@ -95,6 +95,18 @@ class basicMaths:
 
     # eucledian distance
 
+    def gdc_wtih_eucledian(self, n1, n2):
+        while n1 > 0 and n2 > 0:
+            if n1 > n2:
+                n1 = n1 % n2
+            else:
+                n2 = n2 % n1
+
+        if n1 == 0:
+            print(n2)
+        else:
+            print(n1)
+
 
 obj = basicMaths()
-obj.gcd_hcf(15, 20)
+obj.gdc_wtih_eucledian(15, 20)
