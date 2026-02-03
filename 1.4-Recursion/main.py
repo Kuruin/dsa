@@ -85,8 +85,26 @@ class Recursion:
             return
         self.palindrome_string(i+1, string_in)
 
+    def fibonacci(self, n):
+        if n <= 1:
+            return n
+        return self.fibonacci(n-1) + self.fibonacci(n-2)
+
+    def fib1(self, n):
+        if n <= 1:
+            print(" 0 1 ")
+            return
+        n1 = 0
+        n2 = 1
+        print(n1, n2, end=" ")
+        for i in range(2, n+1):
+            n3 = n1+n2
+            n1 = n2
+            n2 = n3
+            print(n3, end=' ')
+
 
 if __name__ == "__main__":
     sol = Recursion()
     test = array("i", [1, 2, 3, 4, 5])
-    sol.palindrome_string(0, "MaDam")
+    sol.fibonacci(5)
