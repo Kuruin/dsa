@@ -107,4 +107,4 @@ class Recursion:
 if __name__ == "__main__":
     sol = Recursion()
     test = array("i", [1, 2, 3, 4, 5])
-    sol.fibonacci(5)
+    sol.fib1(5)
