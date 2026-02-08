@@ -20,13 +20,23 @@ class Sorting1:
         print(arr)
 
     def insertion_sort(self, arr):
-        for i in range(len(arr)):
+        for i in range(1, len(arr)):
             j = i  # j is used just for better understanding, you can use i instead
             while (j > 0 and arr[j-1] > arr[j]):
                 arr[j-1], arr[j] = arr[j], arr[j-1]
                 j -= 1
         print(arr)
 
+    def insertion_sort2(self, arr):
+        for i in range(1, len(arr)):
+            key = arr[i]
+            j = i-1
+            while (j >= 0 and arr[j] > key):
+                arr[j+1] = arr[j]
+                j -= 1
+            arr[j+1] = key
+        print(arr)
+
 
 sol = Sorting1()
-sol.insertion_sort([13, 46, 24, 52, 20, 9])
+sol.insertion_sort2([13, 46, 24, 52, 20, 9])
